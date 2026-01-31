@@ -19,9 +19,15 @@
                 </span>
                 <span class="button-text">back</span>
             </button>
-            <h2 class="heading">Class Countdown</h2>
-            <div class="coundtown">
-                <h1 class="title">Loading</h1>
+            <h2 class="titleSmall">Class Countdown</h2>
+            <div class="countdown">
+                <h1 class="timer">Loading...</h1>
+                <h2 class="miliseconds">Loading...</h2>
             </div>
+            <script src="script.js"></script>
+            <script>
+                getEndOfClass()
+                const intervalId = setInterval(updateClassCountdown, 1)
+            </script>
     </body>
 </html>

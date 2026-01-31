@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PFSCD_TOOLS</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.png" type="image/png">
+    </head>
+
+    <body>
+        <div class="container">
+            <button class="btnback" onclick="window.location.href='main.html'">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">back</span>
+            </button>
+            <h2 class="titleSmall">Class Countdown</h2>
+            <div class="countdown">
+                <h1 class="timer">Loading...</h1>
+                <h2 class="miliseconds">Loading...</h2>
+            </div>
+            <script src="script.js"></script>
+            <script>
+                getEndOfClass()
+                const intervalId = setInterval(updateClassCountdown, 1)
+            </script>
+    </body>
+</html>
