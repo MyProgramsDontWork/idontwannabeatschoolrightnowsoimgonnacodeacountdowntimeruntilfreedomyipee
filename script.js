@@ -1,8 +1,11 @@
 document.addEventListener('keydown', (event) => {
     if (event.ctrlKey && event.shiftKey && event.key === 'Y') {
-        console.log('🎯 SHORTCUT DETECTED! Attempting redirect...');
         event.preventDefault();
         window.location.href = "powerschool_launcher.html";
+    }
+    if (event.ctrlKey && event.shiftKey && event.key === 'A') {
+        event.preventDefault();
+        window.location.href = "animation.html";
     }
 });
 

@@ -129,7 +129,7 @@
   transition: all 0.4s;
 }
 
-.btnsmall:hover {
+.btnSmall:hover {
   box-shadow: inset 0 0 0 3.5px #ef476f, 
               inset 0 0 0 7px #ffd166, 
               inset 0 0 0 10.5px #06d6a0,
@@ -138,7 +138,7 @@
   color: #fff;
 }
 
-.btnback {
+.btnBack {
   position: absolute;
   top: 8px;
   left: 5px;
@@ -156,7 +156,7 @@
   height: auto;
 }
 
-.btnback .circle {
+.btnBack .circle {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: relative;
   display: block;
@@ -169,7 +169,7 @@
   box-shadow: inset 0 0 0 2px #ffffff
 }
 
-.btnback .circle .icon {
+.btnBack .circle .icon {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
@@ -178,7 +178,7 @@
   background: #ffffff;
 }
 
-.btnback .circle .icon.arrow {
+.btnBack .circle .icon.arrow {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   right: 0.625rem;
   width: 1.125rem;
@@ -186,7 +186,7 @@
   background: none;
 }
 
-.btnback .circle .icon.arrow::before {
+.btnBack .circle .icon.arrow::before {
   position: absolute;
   content: "";
   top: -0.3rem;
@@ -198,7 +198,7 @@
   transform: rotate(-45deg);
 }
 
-.btnback .button-text {
+.btnBack .button-text {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
   position: absolute;
   top: 0;
@@ -212,7 +212,7 @@
   text-align: center;
 }
 
-.btnback:hover .circle {
+.btnBack:hover .circle {
   width: 100%;
   box-shadow: inset 0 0 0 3px #ef476f, 
               inset 0 0 0 6px #ffd166, 
@@ -220,7 +220,122 @@
               inset 0 0 0 12px #118ab2;
 }
 
-.btnback:hover .circle .icon.arrow {
+.btnBack:hover .circle .icon.arrow {
   background: #ffffff;
   transform: translate(-0.5rem, 0);
+}
+
+.pl {
+  display: block;
+  width: 9.375em;
+  height: 9.375em;
+}
+
+.pl__arrows,
+.pl__ring-rotate,
+.pl__ring-stroke,
+.pl__tick {
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pl__arrows {
+  animation-name: arrows42;
+  transform: rotate(45deg);
+  transform-origin: 16px 52px;
+}
+
+.pl__ring-rotate,
+.pl__ring-stroke {
+  transform-origin: 80px 80px;
+}
+
+.pl__ring-rotate {
+  animation-name: ringRotate42;
+}
+
+.pl__ring-stroke {
+  animation-name: ringStroke42;
+  transform: rotate(-45deg);
+}
+
+.pl__tick {
+  animation-name: tick42;
+}
+
+.pl__tick:nth-child(2) {
+  animation-delay: -1.75s;
+}
+
+.pl__tick:nth-child(3) {
+  animation-delay: -1.5s;
+}
+
+.pl__tick:nth-child(4) {
+  animation-delay: -1.25s;
+}
+
+.pl__tick:nth-child(5) {
+  animation-delay: -1s;
+}
+
+.pl__tick:nth-child(6) {
+  animation-delay: -0.75s;
+}
+
+.pl__tick:nth-child(7) {
+  animation-delay: -0.5s;
+}
+
+.pl__tick:nth-child(8) {
+  animation-delay: -0.25s;
+}
+
+/* Animations */
+@keyframes arrows42 {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes ringRotate42 {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+@keyframes ringStroke42 {
+  from,
+	to {
+    stroke-dashoffset: 452;
+    transform: rotate(-45deg);
+  }
+
+  50% {
+    stroke-dashoffset: 169.5;
+    transform: rotate(-180deg);
+  }
+}
+
+@keyframes tick42 {
+  from,
+	3%,
+	47%,
+	to {
+    stroke-dashoffset: -12;
+  }
+
+  14%,
+	36% {
+    stroke-dashoffset: 0;
+  }
 }
