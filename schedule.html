@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PFSCD_TOOLS</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.png" type="image/png">
+    </head>
+
+    <body>
+        <div class="containerLeftAligned">
+           <button class="btnback" onclick="window.location.href='main.html'">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">back</span>
+            </button>
+            <h2 class="titleSmall">Schedule</h2>
+            <div class="countdown">
+                <div class="sheduleContent">
+                    <div class="period1">
+                        <strong id="className1">Loading Class...</strong>
+                        <p id="classTimes1">Loading Times...</p>
+                        <p id="classTimer1">Loading Timer...</p>
+                    </div>
+                    <div class="period2">
+                        <strong id="className2">Loading Class...</strong>
+                        <p id="classTimes2">Loading Times...</p>
+                        <p id="classTimer2">Loading Timer...</p>
+                    </div>
+                    <div class="period3">
+                        <strong id="className3">Loading Class...</strong>
+                        <p id="classTimes3">Loading Times...</p>
+                        <p id="classTimer3">Loading Timer...</p>
+                    </div>
+                    <div class="period4">
+                        <strong id="className4">Lunch</strong>
+                        <p id="classTimes4">Loading Times...</p>
+                        <p id="classTimer4">Loading Timer...</p>
+                    </div>
+                    <div class="period5">
+                        <strong id="className5">Loading Class...</strong>
+                        <p id="classTimes5">Loading Times...</p>
+                        <p id="classTimer5">Loading Timer...</p>
+                    </div>
+                    <div class="period6">
+                        <strong id="className6">Enrichment</strong>
+                        <p id="classTimes6">Loading Times...</p>
+                        <p id="classTimer6">Loading Timer...</p>
+                    </div>
+                    <div class="period7">
+                        <strong id="className7">Loading Class...</strong>
+                        <p id="classTimes7">Loading Times...</p>
+                        <p id="classTimer7">Loading Timer...</p>
+                    </div>
+                    <div class="period8">
+                        <strong id="className8">Loading Class...</strong>
+                        <p id="classTimes8">Loading Times...</p>
+                        <p id="classTimer8">Loading Timer...</p>
+                    </div>
+                    <div class="period9">
+                        <strong id="className9">Loading Class...</strong>
+                        <p id="classTimes9">Loading Times...</p>
+                        <p id="classTimer9">Loading Timer...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <script src="script.js"></script>
+            <script>
+                getEndOfClass()
+                const intervalId = setInterval(updateClassCountdown, 1)
+            </script>
+    </body>
+</html>

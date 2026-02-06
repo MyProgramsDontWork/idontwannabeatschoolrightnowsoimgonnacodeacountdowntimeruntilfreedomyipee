@@ -1,3 +1,11 @@
+document.addEventListener('keydown', (event) => {
+    if (event.ctrlKey && event.shiftKey && event.key === 'Y') {
+        console.log('🎯 SHORTCUT DETECTED! Attempting redirect...');
+        event.preventDefault();
+        window.location.href = "powerschool_launcher.html";
+    }
+});
+
 function getEndOfClass() {
     let now = new Date();
     let day = now.getDay();
@@ -7,7 +15,7 @@ function getEndOfClass() {
 
     if (hours < 9 || (hours === 9 && minutes <= 13)) {
         endOfClass.setHours(9, 13, 0, 0);
-    } else if (hours < 9 || (hours === 9 && minutes <= 58)) {
+    } else if (hours === 9 && minutes <= 58) {
         endOfClass.setHours(9, 58, 0, 0);
     } else if (hours < 10 || (hours === 10 && minutes <= 43)) {
         endOfClass.setHours(10, 43, 0, 0);
@@ -47,6 +55,10 @@ function updateClassCountdown() {
     let secondsDiff = Math.floor((classTimeDiff % (1000 * 60)) / 1000);
     let milisecondsDiff = Math.floor(classTimeDiff % 1000);
 
+    if (daysDiff == 0)
+    document.querySelector('.countdown .timer').innerHTML = 
+    `${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
+    else
     document.querySelector('.countdown .timer').innerHTML = 
     `${String(daysDiff)}d ${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
     document.querySelector('.countdown .miliseconds').innerHTML = 
