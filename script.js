@@ -1,11 +1,11 @@
 document.addEventListener('keydown', (event) => {
     if (event.ctrlKey && event.shiftKey && event.key === 'Y') {
         event.preventDefault();
-        window.location.href = "powerschool_launcher.html";
+        window.location.href = 'powerschool_launcher.html';
     }
     if (event.ctrlKey && event.shiftKey && event.key === 'A') {
         event.preventDefault();
-        window.location.href = "animation.html";
+        window.location.href = 'https://apps.apple.com/us/app/powerschool/id406719683';
     }
 });
 
@@ -16,7 +16,13 @@ function getEndOfClass() {
     let minutes = now.getMinutes();
     let endOfClass = new Date();
 
-    if (hours < 9 || (hours === 9 && minutes <= 13)) {
+    if (day == 5) {
+        endOfClass.setDate(now.getDate() + 3);
+        endOfClass.setHours(9, 13, 0, 0);
+    } else if (day == 6) {
+        endOfClass.setDate(now.getDate() + 2);
+        endOfClass.setHours(9, 13, 0, 0);
+    } else if (hours < 9 || (hours === 9 && minutes <= 13)) {
         endOfClass.setHours(9, 13, 0, 0);
     } else if (hours === 9 && minutes <= 58) {
         endOfClass.setHours(9, 58, 0, 0);
@@ -34,12 +40,6 @@ function getEndOfClass() {
         endOfClass.setHours(14, 24, 0, 0);
     } else if (hours < 15 || (hours === 15 && minutes <= 9)) {
         endOfClass.setHours(15, 9, 0, 0);
-    } else if (day == 5) {
-        endOfClass.setDate(now.getDate() + 3);
-        endOfClass.setHours(9, 13, 0, 0);
-    } else if (day == 6) {
-        endOfClass.setDate(now.getDate() + 2);
-        endOfClass.setHours(9, 13, 0, 0);
     } else {
         endOfClass.setDate(now.getDate() + 1);
         endOfClass.setHours(9, 13, 0, 0);
@@ -59,11 +59,52 @@ function updateClassCountdown() {
     let milisecondsDiff = Math.floor(classTimeDiff % 1000);
 
     if (daysDiff == 0)
-    document.querySelector('.countdown .timer').innerHTML = 
+    document.querySelector('.countdown .timerClass').innerHTML = 
     `${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
     else
-    document.querySelector('.countdown .timer').innerHTML = 
+    document.querySelector('.countdown .timerClass').innerHTML = 
     `${String(daysDiff)}d ${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
-    document.querySelector('.countdown .miliseconds').innerHTML = 
+    document.querySelector('.countdown .milisecondsClass').innerHTML = 
+    `${String(milisecondsDiff).padStart(3, '0')} ms`;
+}
+
+function getEndOfDay() {
+    let now = new Date();
+    let day = now.getDay();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let endOfClass = new Date();
+
+    if (day == 5) {
+        endOfClass.setDate(now.getDate() + 3);
+        endOfClass.setHours(15, 09, 0, 0);
+    } else if (day == 6) {
+        endOfClass.setDate(now.getDate() + 2);
+        endOfClass.setHours(15, 09, 0, 0);
+    } else {
+        endOfClass.setDate(now.getDate());
+        endOfClass.setHours(15, 09, 0, 0);
+    }
+
+    return endOfClass;
+}
+
+function updateDayCountdown() {
+    let endOfDay = getEndOfDay();
+    let now = new Date();
+    let dayTimeDiff = endOfDay - now;
+    let daysDiff = Math.floor((dayTimeDiff % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+    let hoursDiff = Math.floor((dayTimeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutesDiff = Math.floor((dayTimeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    let secondsDiff = Math.floor((dayTimeDiff % (1000 * 60)) / 1000);
+    let milisecondsDiff = Math.floor(dayTimeDiff % 1000);
+
+    if (daysDiff == 0)
+    document.querySelector('.countdown .timerDay').innerHTML = 
+    `${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
+    else
+    document.querySelector('.countdown .timerDay').innerHTML = 
+    `${String(daysDiff)}d ${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
+    document.querySelector('.countdown .milisecondsDay').innerHTML = 
     `${String(milisecondsDiff).padStart(3, '0')} ms`;
 }

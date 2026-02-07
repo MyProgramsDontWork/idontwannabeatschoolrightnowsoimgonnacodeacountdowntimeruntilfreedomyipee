@@ -36,18 +36,28 @@
 
 .titleSmall {
   color: #ffffff;
-  font-size: 36px;
-  margin-bottom: 5px;
-  margin-top: 60px;
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
-.timer {
+.timerClass {
   color: #ffffff;
   font-size: 72px;
   margin-bottom: 10px;
 }
 
-.miliseconds {
+.timerDay {
+  color: #ffffff;
+  font-size: 72px;
+  margin-bottom: 10px;
+}
+
+.milisecondsClass {
+  color: #ffffff;
+  font-size: 36px;
+}
+
+.milisecondsDay {
   color: #ffffff;
   font-size: 36px;
 }
