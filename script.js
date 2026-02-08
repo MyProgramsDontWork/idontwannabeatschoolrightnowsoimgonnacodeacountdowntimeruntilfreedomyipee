@@ -56,7 +56,7 @@ function updateClassCountdown() {
     let hoursDiff = Math.floor((classTimeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutesDiff = Math.floor((classTimeDiff % (1000 * 60 * 60)) / (1000 * 60));
     let secondsDiff = Math.floor((classTimeDiff % (1000 * 60)) / 1000);
-    let milisecondsDiff = Math.floor(classTimeDiff % 1000);
+    let millisecondsDiff = Math.floor(classTimeDiff % 1000);
 
     if (daysDiff == 0)
     document.querySelector('.countdown .timerClass').innerHTML = 
@@ -64,15 +64,13 @@ function updateClassCountdown() {
     else
     document.querySelector('.countdown .timerClass').innerHTML = 
     `${String(daysDiff)}d ${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
-    document.querySelector('.countdown .milisecondsClass').innerHTML = 
-    `${String(milisecondsDiff).padStart(3, '0')} ms`;
+    document.querySelector('.countdown .millisecondsClass').innerHTML = 
+    `${String(millisecondsDiff).padStart(3, '0')} ms`;
 }
 
 function getEndOfDay() {
     let now = new Date();
     let day = now.getDay();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
     let endOfClass = new Date();
 
     if (day == 5) {
@@ -97,7 +95,7 @@ function updateDayCountdown() {
     let hoursDiff = Math.floor((dayTimeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     let minutesDiff = Math.floor((dayTimeDiff % (1000 * 60 * 60)) / (1000 * 60));
     let secondsDiff = Math.floor((dayTimeDiff % (1000 * 60)) / 1000);
-    let milisecondsDiff = Math.floor(dayTimeDiff % 1000);
+    let millisecondsDiff = Math.floor(dayTimeDiff % 1000);
 
     if (daysDiff == 0)
     document.querySelector('.countdown .timerDay').innerHTML = 
@@ -105,6 +103,6 @@ function updateDayCountdown() {
     else
     document.querySelector('.countdown .timerDay').innerHTML = 
     `${String(daysDiff)}d ${String(hoursDiff).padStart(2, '0')}:${String(minutesDiff).padStart(2, '0')}:${String(secondsDiff).padStart(2, '0')}`;
-    document.querySelector('.countdown .milisecondsDay').innerHTML = 
-    `${String(milisecondsDiff).padStart(3, '0')} ms`;
+    document.querySelector('.countdown .millisecondsDay').innerHTML = 
+    `${String(millisecondsDiff).padStart(3, '0')} ms`;
 }
