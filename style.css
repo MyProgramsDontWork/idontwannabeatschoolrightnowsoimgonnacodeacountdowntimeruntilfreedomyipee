@@ -368,3 +368,31 @@
     stroke-dashoffset: 0;
   }
 }
+
+/* Autosave status dot in settings (keeps site look) */
+.saveStatus {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #6c757d; /* neutral */
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.03) inset;
+}
+.saveStatus[data-state="pending"] {
+  background: #ffd166; /* yellow while saving */
+  animation: pulse 1s infinite;
+}
+.saveStatus[data-state="saved"] {
+  background: #06d6a0; /* green when saved */
+}
+.saveStatus[data-state="idle"] {
+  background: #6c757d;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
