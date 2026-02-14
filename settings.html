@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PFSCD_TOOLS</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <div class="containerLeftAligned">
+           <button class="btnBack" onclick="window.location.href='main.html'">
+                <span class="circle" aria-hidden="true">
+                    <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">back</span>
+            </button>
+            <h2 class="titleSmall">Settings</h2>
+            <div class="settingsContent">
+                <strong>Schedule Configuration</strong>
+                <div class="scheduleConfiguration">
+                </div>
+                <button class="btnEditRow" id="addRowBtn" onclick="addRow()">Add Period</button>
+                <button class="btnEditRow" id="deleteRowBtn" onclick="removeRow()">Remove Period</button>
+                <br>
+                <br>
+                <strong>Panic Hotkey</strong>
+                <br>
+                <span contenteditable="false">Ctrl + Shift +</span>
+                <span id="hotkeyInput" contenteditable="true">Hotkey</span>
+                <br>
+                <strong>Reserved Keys</strong>
+                <p>Ctrl + Shift + Y (Discreet Launcher)</p>
+                <p>Ctrl + Shift + X (Settings)</p>
+                </div>
+        </div>
+            <script src="script.js"></script>
+    </body>
+</html>
