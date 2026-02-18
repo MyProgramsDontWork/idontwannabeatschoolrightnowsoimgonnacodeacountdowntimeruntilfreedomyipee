@@ -209,7 +209,7 @@ function forceTimeFormat(element, defaultValue = '0:00') {
         if (!timeRegex.test(element.textContent.trim())) {
             element.textContent = defaultValue;
         }
-    });
+    }); 
 }
 
 function rowCount() {
@@ -271,5 +271,3 @@ function removeRow() {
     for (let i = 0; i < 4; i++) grid.removeChild(grid.lastElementChild);
     scheduleSave();
 }
-
-// Note: `scheduleSave(delay)` defined earlier provides debounced saving.

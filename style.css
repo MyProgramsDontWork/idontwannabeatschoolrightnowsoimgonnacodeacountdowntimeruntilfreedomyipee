@@ -27,7 +27,7 @@
   align-items: flex-start;
   text-align: left;
   padding-left: 25px;
-  padding-top: 60px;
+  padding-top: 70px;
 }
 
 .title {
@@ -94,11 +94,23 @@
 .btnEditRow {
   width: 142.5px;
   height: 20px;
-  font-size: 12px;
+  font-size: 10px;
   background-color: #ffffff;
   border: none;
   border-radius: 50px;
-  color: #000000
+  color: #000000;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+#addRowBtn:hover {
+  background-color: #06d6a0;
+  color: #ffffff
+}
+
+#deleteRowBtn:hover {
+  background-color: #ef476f;
+  color: #ffffff
 }
 
 .btnLarge {
